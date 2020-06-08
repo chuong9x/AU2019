@@ -21,7 +21,7 @@ public class CivilAlignment
         if (alignment == null)
             return -1.0;
 
-        return ((Autodesk.Civil.DatabaseServices.Alignment) alignment.InternalDBObject).DesignSpeeds.FirstOrDefault(o => station >= o.Station)?.Value ?? -1.0;
+        return ((Autodesk.Civil.DatabaseServices.Alignment)  alignment.InternalDBObject).DesignSpeeds.FirstOrDefault(o => station >= o.Station)?.Value ?? -1.0;
     }
 
     /// <summary>

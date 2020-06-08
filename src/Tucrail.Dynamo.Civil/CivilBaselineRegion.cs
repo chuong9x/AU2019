@@ -18,7 +18,7 @@ public class CivilBaselineRegion
         if (string.IsNullOrEmpty(assemblyName)) return -1;
         if (baseline == null) return -1;
 
-        var corridor = (Corridor)baseline.Corridor.InternalDBObject;
+        var corridor = baseline.Corridor.InternalDBObject as Corridor;
         var baseBaseline = corridor.Baselines[baseline.Name];
         baseBaseline.BaselineRegions.Add(assetName, assemblyName, assetStartStation, assetEndStation);
         return baseBaseline.BaselineRegions.IndexOf(baseBaseline.BaselineRegions[assetName]);
